@@ -1,5 +1,6 @@
 #include <iostream>
 #include <locale.h>
+#include<cstdlib>
 
 /*ENTRADA: Receba número elementos desejados (máximo de 20)
 PROCESSAMENTO: 

@@ -1,3 +1,28 @@
+#include<iostream>
+#include<ctime>
+using namespace std;
+
+int main()
+{
+    time_t HoraAtual = time(0);
+
+    tm* MinhaHora = localtime(&HoraAtual);
+    cout << "\nHora: " << 1 + MinhaHora->tm_hour << ":" << 1 + MinhaHora->tm_min << ":" << 1 + MinhaHora->tm_sec;
+    cout << "\nDia: " << MinhaHora->tm_mday;
+    cout << "\nMês: " << 1 + MinhaHora->tm_mon;
+    cout << "\nAno " << 1900 + MinhaHora->tm_year << "\n"<< endl; 
+
+    system("pause");
+    return 0;
+}
+// ou int main()
+//{ time_t Tempo = time(NULL)}; 
+//cout << ctime(&Tempo);
+//system("pause");
+//return 0;
+//}
+
+
 /*
 #include<iostream>
 #include<cstring>
@@ -41,6 +66,7 @@ int main()
     return 0;
 }
 */
+/*
                             //Vetros de structs aninhadas
 #include<iostream>
 #include<cstring>
@@ -86,4 +112,4 @@ for (int i = 0; i < 2; i++)
 }
     system("pause");
     return 0;
-}
+}*/

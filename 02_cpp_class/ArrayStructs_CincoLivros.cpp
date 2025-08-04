@@ -1,3 +1,4 @@
+
 //Cadastro Livros com quantidade informada pelo usuário
 // vetores dinâmicos(vetor)
 //Código qual não se sabe a quantidade de livros que sarão
@@ -60,13 +61,7 @@ int main()
   return 0;
 
 }
-
 //*cin.ignore() é usado para ignorar um ou mais caracteres no buffer de entrada. Geralmente, é usado após operações de leitura com cin >> para remover o caractere de nova linha (\n) deixado no buffer, evitando problemas com leituras subsequentes com getline() ou outras funções de leitura de linha. 
-
-
-
-
-
 
 /*#include <iostream>
 #include <string>

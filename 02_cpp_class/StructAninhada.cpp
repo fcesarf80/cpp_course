@@ -1,4 +1,32 @@
 #include<iostream>
+using namespace std;
+struct endereco
+{
+    string rua;
+    string cidade;
+    int nporta;
+};
+
+int main()
+{
+    endereco morada1, morada2;
+
+    cout << "Nome da rua: ";
+    getline(cin, morada1.rua);
+
+    cout << "Nome da cidade: ";
+    getline(cin, morada2.rua);
+
+    cout << "Numero da nporta: ";
+    getline(cin, nporta);
+
+    system("pause");
+    return 0;
+}
+
+
+/*
+#include<iostream>
 #include<ctime>
 using namespace std;
 
@@ -15,6 +43,7 @@ int main()
     system("pause");
     return 0;
 }
+*/
 // ou int main()
 //{ time_t Tempo = time(NULL)}; 
 //cout << ctime(&Tempo);

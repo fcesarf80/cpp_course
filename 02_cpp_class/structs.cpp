@@ -1,3 +1,58 @@
+#include<iostream>
+using namespace std;
+
+
+/*#include<iostream>
+#include<string>
+#include <limits> // Necessário para numeric_limits
+using namespace std;
+struct Aluno { string nome;
+               string end;
+               string email;
+               string tel;
+};
+void lerDados(Aluno& al) {
+    cout << "\nDigite o nome do aluno: ";
+    getline(cin, al.nome);
+    cout << "Digite a morada do aluno: ";
+    getline(cin, al.end);
+    cout << "Digite o email do aluno: ";
+    getline(cin, al.email);
+    cout << "Digite o telefone do aluno: ";
+    getline(cin, al.tel);
+    cout << "Dados armazenados com sucesso!\n";
+}
+void mostrarDados(const Aluno& al) {
+    cout << "\n === DADOS DO ALUNO ===\n";
+    cout << "Nome: " << al.nome << "\n"; 
+    cout << "Morada: " << al.end << "\n"; 
+    cout << "Email: " << al.email << "\n"; 
+    cout << "Telefone: " << al.tel << endl; 
+}
+int main() { struct Aluno al01;
+             int opcao;
+    do {cout <<"\n  === === === MENU === === === \n";
+        cout <<"[1] Ler dados [2] Mostrar dados [0] Sair";
+        cout << "\n>>> Escolha uma opção?";
+        cin >> opcao;
+        cin.ignore();
+      switch (opcao) {
+            case 1:
+                lerDados(al01);
+                break;
+            case 2:
+                mostrarDados(al01);
+                break;
+            case 0:
+            cout << "\nSaindo do Programa...\n";
+                break;
+            default:
+         cout<<"\nOpção inválida.Tente novamente.\n";
+        }
+    } while (opcao != 0);
+    return 0;
+}*/
+/*
 //Crie um prog que receba os dados: ID, título, autor, editora e anos de um livro e coloquenestes dados na tela.
 #include <iostream>
 #include <string>
@@ -17,7 +72,7 @@ struct Livro
 //struct é apenas um modelo para criação de outras variáveis
 /*quando fora criada uma variavel do tipo desta struct, o compilador irá usar este molde, este modelo para arrumar e armazenar dados na memória RAM*/
 
-int main()
+/*int main()
 {
 	//Aqui foi criada uma variavel de nome livro(poderia ser outro nome)
 	//como livro é diferente de Livro pode ser feito, mas confunde...
@@ -25,6 +80,7 @@ int main()
 	e que será criada a partir do modelo da struct Livro*/
 	//Em c++ podemos retirar a palavra struct ao criar uma variável do tipo struct
 
+/*
 	struct Livro livro;
 
 	//A partir de agora podemos acessar os campos desta variavel livro atraves da notação ponto(.)
@@ -52,6 +108,7 @@ int main()
 	system("PAUSE");
 	return 0;
 }
+    */
 
 /*
 #include <iostream>
@@ -145,7 +202,6 @@ cout<<"opção?"<<endl;
 cin>>escolha;
 
 switch(escolha)
-
 case 1:
 cout<<"Quantidade?";
 cin>>p.infoProduto.quantidade;;
@@ -160,7 +216,6 @@ default:
 cout<<"Opcao invalida";
 return 1;
 }
-
 //Exibir os dados
 cout<<"\n ----Detalhe do Produto---\n\n";
 cout<<"ID: "<<p.id<<endl;
@@ -179,7 +234,6 @@ else if (p.topoInfo=='p') {
 return 0;
 }
 */
-
 /*#include<iostream>              //Destrutor. exemplo com índice 
 #include<stdlib.h>              //PONTEIRO
 using namespace std;
@@ -200,11 +254,8 @@ struct Data     //Como não foi especificado o modificador de
         cout<<"\n\u2022 Construtor Data( " << id << ") executado"<< "\n";}
     ~Data(){cout<<"\n\u2022 Destrutor ~Data( " << id << ") executado"<< "\n";}    
 };
-
 //Desta forma, acima, você pode iniciar os valores ao instanciar e usar chaves
-
 int Data::contador = 1; 
-        
 int main()             
 {
     { Data Agenda1;
@@ -225,7 +276,6 @@ int main()
     system("pause");
     return 0;
 }*/
-
 /*
 #include<iostream>              //Destrutor. exemplo com índice 
 #include<stdlib.h>
@@ -247,11 +297,9 @@ struct Data     //Como não foi especificado o modificador de
         cout<<"\n\u2022 Construtor Data( " << id << ") executado"<< "\n";}
     ~Data(){cout<<"\n\u2022 Destrutor ~Data( " << id << ") executado"<< "\n";}    
 };
-
 //Desta forma, acima, você pode iniciar os valores ao instanciar e usar chaves
-
 int Data::contador = 1; 
-        
+      
 int main()             
 {
     { Data Agenda1;
@@ -283,7 +331,6 @@ struct Data     //Como não foi especificado o modificador de
     {cout<<"\n\u2022 Construtor Data() executado"<< "\n";}
     ~Data(){cout<<"\n\u2022 Destrutor ~Data() executado"<< "\n";}    
 };
-        
 int main()             
 {
     { Data Agenda1;
@@ -300,7 +347,6 @@ int main()
     return 0;
 }
 */
-
 /*
 #include<iostream>
 #include<stdlib.h>
@@ -310,11 +356,9 @@ using namespace std;
 //dados agrupados sob um nome. Esses elementos de dados,
 //conhecidos como membros, podem ter diferentes tipo de
 //diferentes tamanhos
-
 //Se você não especificar o modificador de visibilidade 
 //public, privat ou protected na classe por padrão os
 //membros serão privat. Na struct por padrão serão public,
-
 class Data  //struct NomedaStruct{}
 {   
     //Como não foi especificado o modificador de acesso
@@ -323,15 +367,13 @@ public:
     int Dia;         //tipo nome_do_membro1;
     int Mes;   //tipo nome_do_membro2;
     int Ano;       //tipo nome_do_membro3;
-
 public:
     Data(): Dia(30), Mes(07), Ano(2025){}
     
 }; //antes do ; pode declarar NomeObjeto1, NomeObjeto2...;
         
 int main()             //NomedaStruct Objeto1, Objeto2...;
-{
-    system("color 0A");
+{   system("color 0A");
     Data Agenda;
     //desta forma você tem acesso aos atributos, as
     //variáveis da struct diretamente no código da 

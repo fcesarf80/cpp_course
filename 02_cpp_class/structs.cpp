@@ -1,3 +1,65 @@
+//Program q utiliza estrutura chamada livro para armazenar: título, autor, ano de publicação e preço; Também declara uma variável do tipo livro, ler os dados do livro e exibir as informações
+#include<iostream>
+using namespace std;
+struct Livro{
+    string titulo;
+    string autor;
+};
+int main()
+{
+    return 0;
+}
+
+/*strct aninhada
+#include<iostream>
+#include<string>
+using namespace std;
+struct Endereco {
+    string rua;
+    int numero;
+    string cidade;
+};
+struct Pessoa {
+    string nome;
+    int idade;
+    Endereco endereco; //struct aninhada
+};
+int main()
+{   Pessoa p1;
+    p1.nome = "She-Ra";
+    p1.idade = 30;
+    p1.endereco.rua = "Floresta do Sussurro";
+    p1.endereco.numero = 123;
+    p1.endereco.cidade = "Etheria";
+
+    cout<<"Nome: "<<p1.nome<<"\n";
+    cout<<"Idade: "<<p1.idade<<"\n";
+    cout<<"endereço: "<<"-"<<p1.endereco.cidade<<endl;
+    return 0;
+}
+*/
+/*
+#include<iostream>
+#include<string>
+using namespace std;
+struct Aluno
+{   string nome;
+    int idade;
+    float nota;
+};
+int main()
+{   Aluno a;
+    cout << "\nDigite o nome: ";
+    getline(cin, a.nome);
+    cout << "Digite a idade: ";
+    cin >> a.idade;
+    cout <<"Digite a nota: ";
+    cin >> a.nota;
+    cout << "Aluno: "<<a.nome<<", idade: "<<a.idade<<", nota: "<<a.nota<<endl;
+    return 0;
+}
+*/
+/*
 #include<iostream>
 #include<string>
 using namespace std;
@@ -18,7 +80,7 @@ int main()
     cout<<endl;
     cout << " === Endereço === \nRua "<<morada1.rua<<", N°: " <<morada1.nporta<<"\nCidade: "<<morada1.cidade<<endl;
     cout<<endl;
-}
+}*/
 /*#include<iostream>
 using namespace std;
 

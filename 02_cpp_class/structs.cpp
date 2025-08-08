@@ -1,6 +1,21 @@
 #include<iostream>
 using namespace std;
 
+int main()
+{
+    //Módulo 4 Alocação dinamica de memória
+    int n = 5;
+    int *ptr=&n;
+    cout << n << "\t" << *ptr << endl;
+    int*pi=new int; //alocação dinâmica
+
+    *pi=10;
+    cout<<*pi<<endl;
+    delete pi;//libertar essa memória dinâmica
+
+    return 0;
+}
+
 
 /*#include<iostream>
 #include<string>

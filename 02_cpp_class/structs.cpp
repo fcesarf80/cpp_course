@@ -1,4 +1,25 @@
 #include<iostream>
+#include<string>
+using namespace std;
+// Definição da estrutura
+struct endereco {
+    string rua;
+    string cidade;
+    int nporta;    
+};
+int main()
+{   endereco morada1, morada2;
+    cout << "Nome da rua: ";
+    getline(cin, morada1.rua);
+    cout<< "Nome da Cidade: ";
+    getline(cin, morada1.cidade);
+    cout <<"Número da porta: ";
+    cin>>morada1.nporta;
+    cout<<endl;
+    cout << " === Endereço === \nRua "<<morada1.rua<<", N°: " <<morada1.nporta<<"\nCidade: "<<morada1.cidade<<endl;
+    cout<<endl;
+}
+/*#include<iostream>
 using namespace std;
 
 int main()
@@ -15,8 +36,7 @@ int main()
 
     return 0;
 }
-
-
+*/
 /*#include<iostream>
 #include<string>
 #include <limits> // Necessário para numeric_limits

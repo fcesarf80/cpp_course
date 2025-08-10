@@ -2,11 +2,34 @@
 #include<iostream>
 using namespace std;
 struct Livro{
-    string titulo;
-    string autor;
+    string titulo, autor, coautor;
+    int ano;
+    float preco;
 };
 int main()
-{
+{   //variavel tipo Livro
+    Livro book;
+    //Leitura do livro
+    cout<<"\nTitulo do livro?";
+    getline(cin, book.titulo);
+    cout<<"Autor?";
+    getline(cin, book.autor);
+    cout<<"Coautor?";
+    getline(cin, book.coautor);
+    cout<<"Ano de publicação?";
+    cin>>book.ano;
+    cout<<"Preço?";
+    cin>> book.preco;
+    cout<<endl;
+
+    //Imprimi
+    cout<<"Título do livro: "<<book.titulo;
+    cout<<"\nAutor: "<<book.autor;
+    cout<<"\nCoautor: "<<book.coautor;
+    cout<<"\nAno da publicação: "<<book.ano;
+    cout<<"\nPreço "<<book.preco<<"€";
+    cout<<endl;
+
     return 0;
 }
 

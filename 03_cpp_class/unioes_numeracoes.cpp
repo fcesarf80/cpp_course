@@ -34,10 +34,8 @@ int main() {
     cout<<"Nome do Sw: ";
     cin>>sw.nome;
     cout<<"Qual o tipo de serial key?\n [1] chave\t[2] código int\n Escolha uma opção: "<<endl;
-
     int tipo;
     cin>>tipo;
-
     if (tipo==1){
         cout<<"Digite o código: ";
         cin>>sw.chave.chaveinteira;
@@ -60,8 +58,7 @@ using namespace std;
 struct Veiculo {
     string marca, modelo;
     int ano;
-    union {
-        float gasolina, eletrico, diesel;
+    union { float gasolina, eletrico, diesel;
     } combustivel;
     int tipoCombustivel;//1.gasolina 2.eletric 3.diesel
 };
@@ -75,7 +72,6 @@ int main()
     cin>>v.ano;
     cout<<"Escolha o tipo de combustivel:\n[1]gasolina [2] eletrico [3] diesel\n";
     cin>>v.tipoCombustivel;
-
     if (v.tipoCombustivel==1) {
         cout<<"Litros de gasolina?";
         cin>>v.combustivel.gasolina;
@@ -86,7 +82,47 @@ int main()
     } else { cout<<"Litros de diesel?";
         cin>>v.combustivel.diesel;
         }
-    cout<<endl;
+    cout<<endl;    //Imprime na tela
+    cout<<"Marca: "<<v.marca<<endl;
+    cout<<"Modelo: "<<v.modelo<<endl;
+    cout<<"Ano: "<<v.ano<<endl;
     return 0;
 }
 */
+//Prog q utiliza enum para os dias da semana
+#include<iostream>
+using namespace std;
+enum diaSemana{sab, dom, seg, ter, qua, qui, sex};
+int main()
+{   diaSemana hoje;
+    cout<<"\nIntroduzir entre 0-sab e 6-sex para o dia da semana:";
+    int entrada;
+    cin>>entrada;
+    hoje=static_cast<diaSemana> (entrada);
+
+    switch(hoje) {
+    case 0:
+        cout<<"Sábado";
+        break;
+    case 1:
+        cout<<"Domingo";
+        break;
+    case 2:
+        cout<<"Segunda";
+        break;
+    case 3:
+        cout<<"Terça";
+        break;
+    case 4:
+        cout<<"Quarta";
+        break;
+    case 5:
+        cout<<"Quinta";
+    case 6:
+        cout<<"Sexta";    
+    default:
+    cout<<"Valor invalido!";
+        break;
+    }
+    cout<<endl;
+}

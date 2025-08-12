@@ -50,17 +50,16 @@ int main() {
         cout<<"Chave de texto: "<<sw.chave.chavetexto;}
     return 0;
 }*/
-
 /*
 //Prog C++ que armazena infor de véiculo
 #include<iostream>
 using namespace std;
 struct Veiculo {
-    string marca, modelo;
-    int ano;
-    union { float gasolina, eletrico, diesel;
-    } combustivel;
-    int tipoCombustivel;//1.gasolina 2.eletric 3.diesel
+   string marca, modelo;
+   int ano;
+   union { float gasolina, eletrico, diesel;
+   } combustivel;
+   int tipoCombustivel;//1.gasolina 2.eletric 3.diesel
 };
 int main()
 {    Veiculo v;
@@ -89,6 +88,7 @@ int main()
     return 0;
 }
 */
+/*
 //Prog q utiliza enum para os dias da semana
 #include<iostream>
 using namespace std;
@@ -125,4 +125,60 @@ int main()
         break;
     }
     cout<<endl;
+}*/
+//Prog que utiliza union, struct e enum para representar tipod de veiculos
+#include<iostream>
+using namespace std;
+enum tipoVeiculo{carro, moto, caminhao};
+union dadosVeiculo {
+    int numPortas;//carro
+    bool mala;//moto
+    float carga;//caminhao
+};
+struct veiculo {
+    tipoVeiculo tipo;
+    string marca;
+    dadosVeiculo dados;
+};
+int main()
+{
+    veiculo v;
+    int escolha;
+    cout<<"Escolha o tipo de veiculo:\n[0]Carro, [1]Moto [2]Caminhão: ";
+    cin>>escolha;
+    v.tipo=(tipoVeiculo)escolha;
+    cout<<"Marca do veículo: ";
+    cin>>v.marca;
+        switch (v.tipo) {
+            case carro:
+                cout<<"Número de portas: ";
+                cin>>v.dados.numPortas;
+                break;
+            case moto:
+                cout<<"A moto tem mala? [1]Sim - [2]Não: ";
+                cin>>v.dados.mala;
+                break;
+            case caminhao:
+                cout<<"Carga: ";
+                cin>>v.dados.carga;
+                break;
+            default:
+                cout<<"Entrada invalida";
+        }
+        cout<<endl;
+    //Imprimir na tela
+    cout<<"**** DETALHES DO VEICULO ****\n";
+    cout<<"Marca: "<<v.marca<<endl;
+        switch (v.tipo){
+            case carro:
+                cout<<"Num de portas:"<<v.dados.numPortas;
+                break;
+            case moto:
+                cout<<"A moto tem mala: "<<(v.dados.mala?"SIM":"NÃO");
+                break;
+            case caminhao:
+                cout<<"Capacidade de carga: "<<v.dados.carga;
+                break;
+        }
+    return 0;
 }

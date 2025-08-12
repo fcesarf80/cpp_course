@@ -1,3 +1,29 @@
+#include<iostream>
+using namespace std;
+struct Ponto {
+    float x;
+    float y;
+};
+//Função para atribuir valores
+void definirPonto(Ponto *ptr){
+    cout<<"Valor de x? ";
+    cin>>ptr->x;
+    cout<<"Valor de y? ";
+    cin>>ptr->y;
+}
+void mostrarPonto(Ponto *ptr){
+    cout<<"Ponto ("<<ptr->x<<", "<<ptr->y<<")";
+}
+int main()
+{
+    Ponto ponto;
+    Ponto *d=&ponto;
+
+    definirPonto(&ponto);
+    mostrarPonto(&ponto);
+    return 0;    
+}
+/*
 //Program q utiliza estrutura chamada livro para armazenar: título, autor, ano de publicação e preço; Também declara uma variável do tipo livro, ler os dados do livro e exibir as informações
 #include<iostream>
 using namespace std;
@@ -31,7 +57,7 @@ int main()
     cout<<endl;
 
     return 0;
-}
+}*/
 
 /*strct aninhada
 #include<iostream>

@@ -1,5 +1,47 @@
 #include<iostream>
 using namespace std;
+struct Aluno {
+    int num;
+    string nome;
+    string curso;
+    int ano;
+};
+//Função preencher aluno
+void preencherAluno(Aluno *aluno){
+    cout<<"Numero? ";
+    cin>>aluno->num;
+    cout<<"Nome? ";
+    cin>>aluno->nome;
+    cout<<"Curso? ";
+    cin>>aluno->curso;
+    cout<<"Ano Letivo? ";
+    cin>>aluno->ano;
+    cout<<"endl";
+}
+void mostrarAluno(Aluno *aluno){
+    cout<<"Número: "<<aluno->num<<endl;
+    cout<<"Nome: "<<aluno->nome<<endl;
+    cout<<"Curso: "<<aluno->curso<<endl;
+    cout<<"Ano Letivo: "<<aluno->ano<<endl;
+}
+int main()
+{
+    Aluno al[5];
+    //Atribuir valores ao array
+    for (int i=0; i<5; i++) {
+        cout<<"Aluno #"<< i+1<<endl;
+        preencherAluno(&al[i]);
+    }
+
+    //Exibi na tela
+    for (int i=0; i++;){
+        mostrarAluno(&al[i]);
+    }
+
+    return 0;
+}
+/*#include<iostream>
+using namespace std;
 struct Ponto {
     float x;
     float y;
@@ -22,7 +64,7 @@ int main()
     definirPonto(&ponto);
     mostrarPonto(&ponto);
     return 0;    
-}
+}*/
 /*
 //Program q utiliza estrutura chamada livro para armazenar: título, autor, ano de publicação e preço; Também declara uma variável do tipo livro, ler os dados do livro e exibir as informações
 #include<iostream>

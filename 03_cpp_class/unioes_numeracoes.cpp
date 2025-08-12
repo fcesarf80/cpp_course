@@ -14,7 +14,7 @@ int main()
     cout<<"\nInteiro: "<<ex.inteiro<<endl;
     return 0;
 }*/
-
+/*
 //Prog para guardar o registro de software
 #include<iostream>
 #include<cstring>
@@ -43,7 +43,6 @@ int main() {
         cin>>sw.chave.chaveinteira;
         sw.ehchaveinteira=true;        
     }
-
     //Imprime na tela
     cout<<"Dados do Software: "<<endl;
     cout<<"Nome do Software: "<<sw.nome<<endl;
@@ -52,4 +51,42 @@ int main() {
     } else {
         cout<<"Chave de texto: "<<sw.chave.chavetexto;}
     return 0;
+}*/
+
+/*
+//Prog C++ que armazena infor de véiculo
+#include<iostream>
+using namespace std;
+struct Veiculo {
+    string marca, modelo;
+    int ano;
+    union {
+        float gasolina, eletrico, diesel;
+    } combustivel;
+    int tipoCombustivel;//1.gasolina 2.eletric 3.diesel
+};
+int main()
+{    Veiculo v;
+    cout<<"\nMarca?";
+    cin>>v.marca;
+    cout<<"Modelo?";
+    cin>>v.modelo;
+    cout<<"Ano?";
+    cin>>v.ano;
+    cout<<"Escolha o tipo de combustivel:\n[1]gasolina [2] eletrico [3] diesel\n";
+    cin>>v.tipoCombustivel;
+
+    if (v.tipoCombustivel==1) {
+        cout<<"Litros de gasolina?";
+        cin>>v.combustivel.gasolina;
+        //if alinhado
+    } else if (v.tipoCombustivel==2) {
+        cout<<"Percentagem de carregamento?";
+    cin>>v.combustivel.eletrico;
+    } else { cout<<"Litros de diesel?";
+        cin>>v.combustivel.diesel;
+        }
+    cout<<endl;
+    return 0;
 }
+*/

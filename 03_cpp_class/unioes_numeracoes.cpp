@@ -1,4 +1,61 @@
-#include<iostream>
+Dado o seguinte código:
+
+#include <iostream>
+
+using namespace std;
+
+
+
+union Data {
+
+    int i;
+
+    float f;
+
+};
+
+
+
+enum Type { INT, FLOAT };
+
+
+
+struct Variant {
+
+    Type type;
+
+    Data data;
+
+};
+
+
+
+int main() {
+
+    Variant v;
+
+    v.type = INT;
+
+    v.data.i = 100;
+
+
+
+    if (v.type == INT)
+
+        cout << v.data.i << endl;
+
+    else
+
+        cout << v.data.f << endl;
+
+
+
+    return 0;
+
+}
+
+
+/*#include<iostream>
 #include<string>
 using namespace std;
 enum TipoFuncionario { Gerente=1, Tecnico=2, Estagiario =3 };
@@ -59,7 +116,7 @@ int main() {
           cout<<"\u2022 Tipo Estagiário - universidade: "<<func.dados.university<<endl;
     }    
     return 0;
-}
+}*/
 
 
 

@@ -1,4 +1,92 @@
 #include<iostream>
+using namespace std;
+enum Estacao {
+    Primavera = 1, Verao = 2, Outono = 3, Inverno = 4
+};
+int main()
+{   int escolha;
+    cout<<"\n=== Estações do ano: ===\n";
+    cout<<"[1]Primavera\t[2]Verão\n[3]Outono\t[4]Inverno\n";
+    cout<<"Escola uma estação do ano: ";
+    cin>>escolha;
+    switch (escolha) 
+    {
+        case Primavera:
+         cout<<"\nA estação escolhida foi a primavera!"<<endl;
+        break;
+        case Verao:
+            cout<<"\nA estação escolhida foi o verão!"<<endl;
+        break;
+        case Outono:
+            cout<<"\nA estação escolhida foi o outono!"<<endl;
+        break;
+        case Inverno:
+            cout<<"\nA estação escolhida foi o inverno!"<<endl;
+        break;
+    default:
+        cout<<"\nOpção inválida."<<endl;
+        break;
+    }
+    cout<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Atividade nº 5 - Módulo 3
+
+
+Programa que utiliza struct, union e enum para armazenar e exibir informações, solicitadas sobre funcionários de uma empresa, com suas funções e atributos específico: Gerente → Bonus salarial (float), Técnico → Número de certificações (int) e Estagiário → Universidade em que estuda (string);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
 #include<string>
 using namespace std;
 union ValorProduto {   //união que armazena quantidade ou preço
@@ -48,84 +136,7 @@ int main() {
         }
     cout<<endl;
     return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*Atividade nº 3 - Módulo 3
-
-Crie um programa que utilize uma struct para representar um produto. A struct deve conter um ID, um nome e uma união para armazenar um valor inteiro (quantidade em estoque) ou um valor float (preço). O programa deve permitir ao utilizador escolher qual informação armazenar na união e exibi-la na tela.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Atividade nº 4 - Módulo 3
-
-Crie um programa em C++ que utilize um enum para representar as estações do
-ano (Primavera, Verão, Outono e Inverno). O utilizador deve digitar um número
-de 1 a 4, e o programa exibirá o nome da estação correspondente.
-
-
-
-
-
-
-
-
-
-
-
-Atividade nº 5 - Módulo 3
-
-
-Programa que utiliza struct, union e enum para armazenar e exibir informações, solicitadas sobre funcionários de uma empresa, com suas funções e atributos específico: Gerente → Bonus salarial (float), Técnico → Número de certificações (int) e Estagiário → Universidade em que estuda (string);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 
 /*#include<iostream>
 using namespace std;

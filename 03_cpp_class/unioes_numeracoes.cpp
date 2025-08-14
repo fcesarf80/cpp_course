@@ -1,8 +1,35 @@
+Programa em C++ que: defina uma struct chamada Pessoa com os seguintes campos: nome (uma string de até 100 caracteres) e
+idade (inteiro). • Solicite ao utilizador o número de pessoas a serem cadastradas. • Utilize alocação dinâmica (new) para criar um vetor de Pessoa. • Peça ao utilizador que preencha os dados (nome e idade) de cada pessoa. • No final, exiba os dados de todas as pessoas cadastradas. • Liberte a memória alocada dinamicamente
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+Programa q solicita ao usuário o número de elementos de um vetor de inteiros. Use alocação dinâmica de memória (new) para criar o vetor. Peça ao utilizador que preencha o vetor com valores inteiros. Calcule e exiba: A soma dos elementos. A média dos elementos. O maior e o menor valor.
+Liberte a memória alocada dinamicamente no final do programa.
 #include<iostream>
 using namespace std;
 int main () {
-    int n;     //solicita número de elemntos do vetor
-    cout<<"Digite o números de elementos desejado: ";
+    int n;     //solicita número de elementos do vetor
+    cout<<"\nDigite o números de elementos desejado: ";
     cin>>n;            //alocação dinâmica de memória
     int* vetor = new int[n];      //leitura elementos
         for (int i = 0; i< n; i++) {
@@ -18,38 +45,13 @@ int main () {
         if (vetor[i]< menor) menor = vetor[i];
     }
     double media = static_cast<double>(soma) / n;
-        cout<<"\nSoma: "<< soma <<endl;   //resultado
-        cout<<"Média: "<< media <<endl;
-        cout<<"Maior número: "<< maior <<endl;
-        cout<<"Menor número: "<< menor <<endl;
+    cout<<"\n\u2022 A soma dos elementos é: "<<soma<<"\t\u2022 A média é: "<< media <<endl;
+    cout<<"\u2022 O Maior número é: "<< maior <<"\t\t\u2022 O menor número é: "<< menor <<endl;
+    cout<<endl;
     delete[]vetor;//libera memória com delete[]vetor;
     return 0;
-}
-
-
-
-
-
-
-
- /*
-Programa q solicita ao usuário o número de elementos de um vetor de inteiros. Use alocação dinâmica de memória (new) para criar o vetor. Peça ao utilizador que preencha o vetor com valores inteiros. Calcule e exiba: A soma dos elementos. A média dos elementos. O maior e o menor valor.
-Liberte a memória alocada dinamicamente no final do programa.*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
+*/
 /*#include <iostream>
 
 int main() {
@@ -57,7 +59,6 @@ int main() {
     *ptr = 10; // Atribuição do valor 10 ao inteiro alocado
     std::cout << "Valor: " << *ptr << std::endl; // Saída: Valor: 10
     delete ptr; // Liberação da memória alocada
-
     int *array = new int[5]; // Alocação dinâmica de um array de 5 inteiros
     for (int i = 0; i < 5; i++) {
         array[i] = i * 2;
@@ -68,10 +69,8 @@ int main() {
     }
     std::cout << std::endl;
     delete[] array; // Liberação da memória do array
-
     return 0;
 }*/
-
 /*#include<iostream>
 #include<string>
 using namespace std;
@@ -118,10 +117,8 @@ int main() {
             cout<<"\nTipo inválido!\n";;
             return 1;
     }
-    
     cout << "\n === DADOS DO FUNCIONÁRIO ===\n";
     cout << "\u2022 Nome: "<<func.nome<<"\t\u2022 ID: "<<func.id<<endl;
-
     switch (func.tipo) {
         case Gerente:
           cout<<"\u2022 Tipo: Gerente\t\u2022 Bônus Salarial: "<<func.dados.bonus<<" €"<<endl;
@@ -134,36 +131,6 @@ int main() {
     }    
     return 0;
 }*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*Atividade nº 5 - Módulo 3
 Programa que utiliza struct, union e enum para armazenar e exibir informações, solicitadas sobre funcionários de uma empresa, com suas funções e atributos específico: Gerente → Bonus salarial (float), Técnico → Número de certificações (int) e Estagiário → Universidade em que estuda (string);
 
@@ -199,7 +166,6 @@ int main()
     cout<<endl;
     return 0;
 }*/
-
 /*#include<iostream>
 #include<string>
 using namespace std;
@@ -251,7 +217,6 @@ int main() {
     cout<<endl;
     return 0;
 }*/
-
 /*#include<iostream>
 using namespace std;
 union Dado {
@@ -389,7 +354,6 @@ int main()
     int entrada;
     cin>>entrada;
     hoje=static_cast<diaSemana> (entrada);
-
     switch(hoje) {
     case 0:
         cout<<"Sábado";
@@ -472,5 +436,4 @@ int main()
                 break;
         }
     return 0;
-}
-    */
+}  */

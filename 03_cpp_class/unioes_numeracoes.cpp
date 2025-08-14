@@ -1,33 +1,63 @@
 #include<iostream>
+#include<string>
 using namespace std;
-enum Estacao {
-    Primavera = 1, Verao = 2, Outono = 3, Inverno = 4
+enum TipoFuncionario { Gerente=1, Tecnico=2, Estagiario =3 };
+union DadosEspecificos {
+    float bonus;
+    int numCertific;
+    char university[100];
 };
-int main()
-{   int escolha;
-    cout<<"\n=== Estações do ano: ===\n";
-    cout<<"[1]Primavera\t[2]Verão\n[3]Outono\t[4]Inverno\n";
-    cout<<"Escola uma estação do ano: ";
-    cin>>escolha;
-    switch (escolha) 
-    {
-        case Primavera:
-         cout<<"\nA estação escolhida foi a primavera!"<<endl;
-        break;
-        case Verao:
-            cout<<"\nA estação escolhida foi o verão!"<<endl;
-        break;
-        case Outono:
-            cout<<"\nA estação escolhida foi o outono!"<<endl;
-        break;
-        case Inverno:
-            cout<<"\nA estação escolhida foi o inverno!"<<endl;
-        break;
-    default:
-        cout<<"\nOpção inválida."<<endl;
-        break;
+struct Funcionario {
+    string nome;
+    int id;
+    TipoFuncionario tipo;
+    DadosEspecificos dados;
+};
+int main() {
+    Funcionario func;
+    int tipoInput;
+
+    cout << "\nDigite o nome funcionário: ";
+    getline(cin, func.nome);
+
+    cout<< "Digite o ID de funcioário: ";
+    cin>> func.id;
+    cout<< "\nSelecione o tipo de funionário:\n";
+    cout<< "[1]Gerencia [2]Técnica [3]Estagios >>Opção? ";
+    cin>> tipoInput;
+    func.tipo = static_cast<TipoFuncionario>(tipoInput);
+    cin.ignore();    //Clear buffer
+    switch (func.tipo) {
+        case Gerente:
+            cout<<"GERENCIA = Adicione o bônus salarial: ";
+            cin>>func.dados.bonus;
+            break;
+        case Tecnico:
+            cout<<"Tecnico = Adicione o número de certificações: ";
+            cin>>func.dados.numCertific;
+            break;
+        case Estagiario:
+            cout<<"Tecnico = Adicione o nome da universidade: ";
+            cin.getline(func.dados.university, 100);
+            break;
+        default:
+            cout<<"\nTipo inválido!\n";;
+            return 1;
     }
-    cout<<endl;
+    
+    cout << "\n === DADOS DO FUNCIONÁRIO ===\n";
+    cout << "\u2022 Nome: "<<func.nome<<"\t\u2022 ID: "<<func.id<<endl;
+
+    switch (func.tipo) {
+        case Gerente:
+          cout<<"\u2022 Tipo: Gerente\t\u2022 Bônus Salarial: "<<func.dados.bonus<<" €"<<endl;
+        break;
+        case Tecnico:
+          cout<<"\u2022Tipo Técnico - Número de Certificações: "<<func.dados.numCertific<<endl;
+          break;
+        case Estagiario:
+          cout<<"\u2022 Tipo Estagiário - universidade: "<<func.dados.university<<endl;
+    }    
     return 0;
 }
 
@@ -59,32 +89,42 @@ int main()
 
 
 
+
 /*Atividade nº 5 - Módulo 3
-
-
 Programa que utiliza struct, union e enum para armazenar e exibir informações, solicitadas sobre funcionários de uma empresa, com suas funções e atributos específico: Gerente → Bonus salarial (float), Técnico → Número de certificações (int) e Estagiário → Universidade em que estuda (string);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*#include<iostream>
+using namespace std;
+enum Estacao {
+    Primavera = 1, Verao = 2, Outono = 3, Inverno = 4
+};
+int main()
+{   int escolha;
+    cout<<"\n=== Estações do ano: ===\n";
+    cout<<"[1]Primavera\t[2]Verão\n[3]Outono\t[4]Inverno\n";
+    cout<<"Escola uma estação do ano: ";
+    cin>>escolha;
+    switch (escolha) 
+    {
+        case Primavera:
+         cout<<"\nA estação escolhida foi a primavera!"<<endl;
+        break;
+        case Verao:
+            cout<<"\nA estação escolhida foi o verão!"<<endl;
+        break;
+        case Outono:
+            cout<<"\nA estação escolhida foi o outono!"<<endl;
+        break;
+        case Inverno:
+            cout<<"\nA estação escolhida foi o inverno!"<<endl;
+        break;
+    default:
+        cout<<"\nOpção inválida."<<endl;
+        break;
+    }
+    cout<<endl;
+    return 0;
+}*/
 
 /*#include<iostream>
 #include<string>

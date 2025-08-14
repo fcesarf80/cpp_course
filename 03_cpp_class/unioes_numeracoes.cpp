@@ -1,59 +1,76 @@
-Dado o seguinte código:
-
-#include <iostream>
-
+#include<iostream>
 using namespace std;
-
-
-
-union Data {
-
-    int i;
-
-    float f;
-
-};
-
-
-
-enum Type { INT, FLOAT };
-
-
-
-struct Variant {
-
-    Type type;
-
-    Data data;
-
-};
-
-
-
-int main() {
-
-    Variant v;
-
-    v.type = INT;
-
-    v.data.i = 100;
-
-
-
-    if (v.type == INT)
-
-        cout << v.data.i << endl;
-
-    else
-
-        cout << v.data.f << endl;
-
-
-
+int main () {
+    int n;     //solicita número de elemntos do vetor
+    cout<<"Digite o números de elementos desejado: ";
+    cin>>n;            //alocação dinâmica de memória
+    int* vetor = new int[n];      //leitura elementos
+        for (int i = 0; i< n; i++) {
+        cout << "Número "<<i+1 <<": ";
+        cin>>vetor[i];
+    }                                        //cálculo
+        int soma = 0;
+        int maior = vetor[0];
+        int menor = vetor[0];
+    for (int i = 0; i < n; i++) {
+        soma += vetor[i];
+        if (vetor[i]> maior) maior = vetor[i];
+        if (vetor[i]< menor) menor = vetor[i];
+    }
+    double media = static_cast<double>(soma) / n;
+        cout<<"\nSoma: "<< soma <<endl;   //resultado
+        cout<<"Média: "<< media <<endl;
+        cout<<"Maior número: "<< maior <<endl;
+        cout<<"Menor número: "<< menor <<endl;
+    delete[]vetor;//libera memória com delete[]vetor;
     return 0;
-
 }
 
+
+
+
+
+
+
+ /*
+Programa q solicita ao usuário o número de elementos de um vetor de inteiros. Use alocação dinâmica de memória (new) para criar o vetor. Peça ao utilizador que preencha o vetor com valores inteiros. Calcule e exiba: A soma dos elementos. A média dos elementos. O maior e o menor valor.
+Liberte a memória alocada dinamicamente no final do programa.*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include <iostream>
+
+int main() {
+    int *ptr = new int; // Alocação dinâmica de um inteiro
+    *ptr = 10; // Atribuição do valor 10 ao inteiro alocado
+    std::cout << "Valor: " << *ptr << std::endl; // Saída: Valor: 10
+    delete ptr; // Liberação da memória alocada
+
+    int *array = new int[5]; // Alocação dinâmica de um array de 5 inteiros
+    for (int i = 0; i < 5; i++) {
+        array[i] = i * 2;
+    }
+    std::cout << "Array: ";
+    for (int i = 0; i < 5; i++) {
+        std::cout << array[i] << " "; // Saída: Array: 0 2 4 6 8
+    }
+    std::cout << std::endl;
+    delete[] array; // Liberação da memória do array
+
+    return 0;
+}*/
 
 /*#include<iostream>
 #include<string>

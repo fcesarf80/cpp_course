@@ -1,3 +1,132 @@
+#include<iostream>
+#include<string>
+using namespace std;
+union ValorProduto {   //união que armazena quantidade ou preço
+    int quantidade;
+    float preco;
+};
+enum tipoValor {       //enum ->indicar o tipo d dado armazenado na união
+    TIPO_QUANTIDADE,
+    TIPO_PRECO
+};
+struct Produto {       //struct que representa o produto
+    int id;
+    string nome;
+    ValorProduto valor;
+    tipoValor tipo;
+};
+int main() {
+    Produto produto;
+    cout<<"\nDigite o ID do produto: ";     //Engtrada de dados fixos
+    cin>>produto.id;
+    cin.ignore();                           //limpa buffer do cin
+    cout<<"Digite o nome do produto: ";
+    getline(cin, produto.nome);
+  int escolha;                 //escolda do valor para armazenar na união
+  cout<< "\n***** Escolha qual valor deseja armazenar: *****\n";
+  cout<<"[1] Quantidade em estoque\t[2] Preço do produto\n_ Opção?_";
+  cin>>escolha;    
+        if (escolha == 1) {
+            cout<<"Digite a quantidade em estoque: ";
+            cin>>produto.valor.quantidade;
+            produto.tipo = TIPO_QUANTIDADE;
+        } else if (escolha == 2) {
+            cout<<"Digite o preço do produto: ";
+            cin>>produto.valor.preco;
+            produto.tipo = TIPO_PRECO;
+        } else {
+            cout<<"Opção invalida.\n";
+            return 1;
+        }    
+    cout<<"\n=== Detalhes do Produto ==\n";    //Exibe dados do produto
+    cout<<"ID: "<<produto.id<<endl;
+    cout<<"Nome: "<<produto.nome<<endl;
+        if (produto.tipo == TIPO_QUANTIDADE) {
+        cout<<"Quantidade em estoque: "<<produto.valor.quantidade<<endl;
+        } else if (produto.tipo == TIPO_PRECO) {
+        cout<<"Preço: "<<produto.valor.preco<<" €"<<endl;
+        }
+    cout<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Atividade nº 3 - Módulo 3
+
+Crie um programa que utilize uma struct para representar um produto. A struct deve conter um ID, um nome e uma união para armazenar um valor inteiro (quantidade em estoque) ou um valor float (preço). O programa deve permitir ao utilizador escolher qual informação armazenar na união e exibi-la na tela.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Atividade nº 4 - Módulo 3
+
+Crie um programa em C++ que utilize um enum para representar as estações do
+ano (Primavera, Verão, Outono e Inverno). O utilizador deve digitar um número
+de 1 a 4, e o programa exibirá o nome da estação correspondente.
+
+
+
+
+
+
+
+
+
+
+
+Atividade nº 5 - Módulo 3
+
+
+Programa que utiliza struct, union e enum para armazenar e exibir informações, solicitadas sobre funcionários de uma empresa, com suas funções e atributos específico: Gerente → Bonus salarial (float), Técnico → Número de certificações (int) e Estagiário → Universidade em que estuda (string);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /*#include<iostream>
 using namespace std;
 union Dado {

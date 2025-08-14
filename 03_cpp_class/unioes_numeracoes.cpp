@@ -1,5 +1,41 @@
 /*#include<iostream>
 using namespace std;
+union Dado {
+    int inteiro;
+    float decimal;
+    char caractere;    
+};
+int main() {
+    Dado item;
+    int escolha;
+    cout<<"\n == Escolha o tipo de dado ==\n";
+    cout<<"[1] inteiro\t [2] decimal\n";
+    cout<<"[3] caractere\t  _  Opção ? ";
+    cin>> escolha;
+    switch (escolha) {
+        case 1:
+            cout<<"Digite um número inteiro: ";
+            cin>>item.inteiro;
+            cout<<"Valor inteiro armazenado: "<<item.inteiro<<endl;
+            break;
+        case 2:
+            cout<<"Digite um número decimal: ";
+            cin>>item.decimal;
+            cout<<"Valor decimal armazenado: "<<item.decimal<<endl;
+            break;
+        case 3:
+            cout<<"Digite um caractere: ";
+            cin>>item.caractere;
+            cout<<"Caractere digitado: "<<item.caractere<<endl;
+            break;
+        default:
+            cout<<"Opção invalida!"<<endl;
+    }
+        cout<<endl;
+    return 0;
+}*/
+/*#include<iostream>
+using namespace std;
 union exemplo {
     int inteiro;
     float decimal;
@@ -127,6 +163,7 @@ int main()
     cout<<endl;
 }*/
 //Prog que utiliza union, struct e enum para representar tipod de veiculos
+/*
 #include<iostream>
 using namespace std;
 enum tipoVeiculo{carro, moto, caminhao};
@@ -182,3 +219,4 @@ int main()
         }
     return 0;
 }
+    */

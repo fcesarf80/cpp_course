@@ -1,4 +1,20 @@
-#include <iostream>
+/*#include<iostream>
+#include<list>
+using namespace std;
+int main (){
+    list<int>numeros;//Add números a lista    
+    numeros.push_back(10);
+    numeros.push_back(20);
+    numeros.push_back(30);
+    numeros.push_back(40);
+    cout<<"\nElementos da lista: ";//Imprime
+    for (int num : numeros) {
+        cout << num << " "; }//Imprime  lista
+    cout<<"Tamanho da lista: "<<numeros.size();
+    return 0;
+}*/
+
+/*#include <iostream>
 #include <fstream>
 using namespace std;
 struct P {  string nome;
@@ -25,30 +41,7 @@ int main () {
         cout << linha << endl; }
     in.close();
     return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 /*#include <iostream>
 #include <fstream>
 using namespace std;

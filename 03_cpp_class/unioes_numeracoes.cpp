@@ -1,3 +1,66 @@
+#include<iostream>
+#include<list>
+#include<string>
+#include<iomanip>
+using namespace std;
+struct Prod {  //Define struct Produto
+    string nome;
+    float preco;
+    int quant; //quantidade
+};
+int main() {
+    list<Prod> produto = {
+        {" Café", 2.50f, 2},
+        {"Leite", 0.86f, 4},
+        {" Pão ", 0.20f, 10},
+    };
+    float vTotal = 0.0f;
+    cout << fixed << setprecision(2);
+    cout << "Lista de produtos:\n";
+  for (const auto& p : produto) {
+      float totalProd = p.preco * p.quant;
+      cout << "Nome: "<<p.nome
+           << " | Preço: "<<p.preco<< " €"
+           << " | Quantidade: "<<p.quant
+           << " | Total: "<<totalProd<<" €"<<endl;
+           vTotal += totalProd;   }
+  cout<<"\nValor da compra: "<<vTotal<<" €"<<endl;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
+#include<list>
+#include<string>
+using namespace std;
+int main() {
+  list<string>nomes;
+  string nome; //Leitura dos nomes:
+  cout<<"Digite cinco nomes: "<<endl;
+  for(int i = 0; i<5; i++) {
+    cout << i + 1<< "° nome: ";
+    getline(cin, nome);
+    nomes.push_back(nome);
+  } //Percorre interatos/exibe nomes
+  cout<<"\nNomes armazenados: "<<endl;
+  list<string>::iterator it;
+for(it=nomes.begin();it !=nomes.end();++it) 
+{  cout << *it << endl; }
+  return 0;
+}*/
 /*#include<iostream>
 #include<list>
 using namespace std;

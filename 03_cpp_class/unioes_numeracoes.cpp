@@ -1,4 +1,156 @@
-#include<iostream>
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <numeric>
+#include <limits>
+using namespace std;
+int main() {  int n;
+    cout << "Quantos numeros deseja digitar? ";
+    if (!(cin >> n) || n <= 0) return 0;
+    vector<int> numeros;
+    numeros.reserve(n);
+    cout << "Digite os numeros:\n";
+for(int i = 0; i < n; ++i) { int x; cin >> x;
+        numeros.push_back(x);   }   //Exibe
+    cout << "\nDigitados: ";
+for(int v : numeros) cout <<v<<' ';//maior/menor/media        
+    auto[itMin, itMax]= minmax_element(numeros.begin(),
+    numeros.end());
+    double media = accumulate(numeros.begin(),
+    numeros.end(), 0.0) / numeros.size();
+    cout<<"Maior: "<<*itMax <<", Menor: "<< *itMin <<
+    ",Media: "<< media <<endl; //Exibe ordena crescente
+    sort(numeros.begin(), numeros.end());
+    cout << "Ordenados: ";
+    for(int v : numeros)cout<<v <<' ';//Remove um valor
+    cout << "Digite um valor a remover: ";
+    int valor; 6cin >> valor;
+auto novoFim =remove(numeros.begin(),numeros.end(),valor);
+    if (novoFim != numeros.end()) {
+        numeros.erase(novoFim, numeros.end());
+        cout << "Vector atualizado: ";
+ } else { cout<<"Valor nao encontrado.Vector mantido: "; }
+    for (int v : numeros) cout << v << ' ';
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
+#include<cmath>
+using namespace std;
+int main() {
+    double num;
+    cout << "Digite um número real: ";
+    cin >> num;
+    if (num >= 0)
+    cout << "Raíz quadrada: "<< sqrt(num)<<endl;
+    else
+cout << "Raíz quadrada: não definida para números negativos!";
+    cout << "Número ao quadrado: "<< pow(num, 2)<<endl;
+    cout <<"Seno: " << sin(num) << endl;
+    cout <<"Coseno: "<< cos(num) << endl;
+    if (num > 0)
+    cout << "Logaritmo natural: "<< log(num) << endl;
+    else
+    cout <<"Logaritmo natural: não definido para zero ou números negativos" << endl;
+    cout<< "Valor absoluto: " <<fabs(num)<< endl;   
+    return 0;
+}*/
+/*#include<iostream>
+#include<ctime>
+#include<string>
+using namespace std;
+int main() {
+    time_t now = time(0);
+    tm* tLocal = localtime(&now);
+    char buffer[50];
+   strftime(buffer, 50, "%A, %d, %m%Y - %H:%M:%S", tLocal);
+    cout << "\nData e hora atual: "<< buffer << endl;
+    cout << "\nDigite o seu nome: ";
+    time_t inicio = time(0);
+    string nome;
+    getline(cin, nome);
+    time_t fim = time(0);
+    double tGasto = difftime(fim, inicio);
+    cout << "\nOla, "<< nome << "!"<<endl;
+cout<<"Você demorou"<<tGasto<<"seg. para digitar o seu nome";
+    return 0;
+}*/
+
+/*#include<iostream>
+#include<string>
+#include<algorithm>
+using namespace std;
+int main(){
+    string frase;
+    cout << "Digite uma frase: ";
+    getline(cin, frase);
+    cout<< "Tamanho: "<<frase.size()<<endl;
+    int contA=count(frase.begin(), frase.end(),'a');
+    cout<< "Número de 'a': "<<contA<< endl;
+    string maiusc = frase;
+    transform(maiusc.begin(),maiusc.end(),
+    maiusc.begin(),::toupper);
+    cout<<"Maiúsculas: " << maiusc << endl;
+    string subst = frase;
+    size_t pos = 0;
+while((pos = subst.find("C++", pos))!=string::npos){
+        subst.replace(pos, 3, "C mais mais");
+        pos += 11;                               }
+    cout <<"Substituída: " << subst << endl;
+    string invert = frase;
+    reverse(invert.begin(), invert.end());
+    cout<< "Invertida: "<< invert<< endl;
+    return 0;
+}*/
+/*#include<iostream>
+#include<list>
+#include<string>
+using namespace std;
+int main () {
+    list<string>nomes;
+    string nome;
+    for(int i = 0; i < 5; i++) {
+        cout << "Digite um nome: ";
+        getline(cin, nome);
+        nomes.push_back(nome); }
+    cout<< "\nNomes digitados: "<<endl;
+for(auto it=nomes.begin();it!=nomes.end();++it) {
+        cout << *it << endl;         }
+    nomes.sort();
+    cout<< "\nNomes ordenados: "<<endl;
+for(auto it= nomes.begin();it !=nomes.end(); ++it){
+        cout<< *it << endl;                     }
+    cout << "\nDigite um nome para procura: ";
+    getline(cin, nome);
+    bool encontrado = false;
+for(auto it=nomes.begin();it !=nomes.end();++it){
+        if (*it == nome) { encontrado = true;
+        break;      }                         }
+    if(encontrado)
+    cout<< "O nome está na lista."<<endl;
+    else
+    cout<< "O nome NÃO consta na lista!"<< endl;
+    return 0;
+}*/
+/*#include<iostream>
 #include<list>
 #include<string>
 #include<iomanip>
@@ -26,21 +178,7 @@ int main() {
            vTotal += totalProd;   }
   cout<<"\nValor da compra: "<<vTotal<<" €"<<endl;
     return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 
 /*#include<iostream>
 #include<list>

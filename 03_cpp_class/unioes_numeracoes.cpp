@@ -1,12 +1,22 @@
 #include<iostream>
-#include<fstream> // biblioteca parea arquivos
+#include<fstream>
 using namespace std;
-int main() {                 //Criação e abertura de arquivo
-    ofstream arquivo("atividade5_1.txt");//add frases no arq.
-    arquivo << "Atividade 5.1" << endl;
-    arquivo << "Texto de arquivo std::ofstream" << endl;
-    arquivo.close();    //Fechar arquivo
-    cout << "Arquivo criado com sucesso!" << endl;    
+int main (){                //Abrir para escrita
+    fstream arquivo("atividade5_3.txt", ios::out);
+    for (int i = 1; i<=5; i++) {
+        string clube;
+        cout << i << "° Clube: ";
+        getline(cin, clube);
+        arquivo << clube << endl;
+    }
+    arquivo.close(); //Fecha após escrever
+    arquivo.open("atividade5_3.txt", ios::in);//abrir p leitura
+    cout << "\n=== Clubes Arquivados ===" << endl;
+    string linha;
+    while (getline(arquivo, linha)) {
+        cout << linha << endl;
+    }
+    arquivo.close();// Fecha pós leitura
     return 0;
 }
 
@@ -26,12 +36,22 @@ int main() {                 //Criação e abertura de arquivo
 
 
 
-
-
-
-
-
-
+/*#include<iostream>
+#include<fstream> // biblioteca parea arquivos
+using namespace std;
+int main() {                
+ ifstream arquivo("atividade5_1.txt"); //Abertura arq.
+ if (!arquivo.is_open()){ //Verifica abriu correto
+     cout << "Erro ao abrir arquivo!" << endl;
+     return 1;
+    }
+   string linha; //Ler/exibir arquivo
+   while (getline(arquivo, linha)) {
+      cout << linha << endl;
+   }
+   arquivo.close(); //Fecha arquivo
+   return 0;
+}*/
 
 /*#include<iostream>
 using namespace std;        //Define a estrutura Funcionário

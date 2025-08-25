@@ -1,4 +1,47 @@
-#include <iostream>
+#include<iostream>
+#include<array>
+#include<algorithm>
+#include<numeric>
+using namespace std;
+int main() {
+    array<float, 5> notas;
+for (int i = 0; i < 5; i++) {
+    do { cout<< "Digite a nota do "<<i + 1<<"° aluno: ";
+          cin >> notas[i];
+        } while(notas[i] < 0.0f || notas[i] > 20.0f);  }
+    cout<< "\nNotas digitadas: ";
+    for (float n : notas) cout << n << " ";
+ cout<<"Maior nota:"<<*max_element(notas.begin(),notas.end());
+ cout<<"Menor nota:"<<*min_element(notas.begin(), notas.end());
+ cout<<"Média:"<<accumulate(notas.begin(),notas.end(),0.0f)/notas.size();
+    array<float, 5>notasOrdenadas = notas;
+    sort(notasOrdenadas.begin(), notasOrdenadas.end());
+    cout <<"\n\u2022 Notas em ordem crescente: ";
+    for (float n : notasOrdenadas) cout << n<< " ";
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include <iostream>
 #include <vector>
 #include <algorithm>
 #include <numeric>
@@ -32,25 +75,7 @@ auto novoFim =remove(numeros.begin(),numeros.end(),valor);
  } else { cout<<"Valor nao encontrado.Vector mantido: "; }
     for (int v : numeros) cout << v << ' ';
     return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 
 /*#include<iostream>
 #include<cmath>

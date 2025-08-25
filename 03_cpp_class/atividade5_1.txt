@@ -1,0 +1,3 @@
+Curso avançado de C++
+Atividade 5.1
+Texto de arquivo std::ofstream

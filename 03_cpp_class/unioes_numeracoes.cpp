@@ -1,27 +1,98 @@
-Programa em C++ que: defina uma struct chamada Pessoa com os seguintes campos: nome (uma string de até 100 caracteres) e
+#include<iostream>
+#include<fstream> // biblioteca parea arquivos
+using namespace std;
+int main() {                 //Criação e abertura de arquivo
+    ofstream arquivo("atividade5_1.txt");//add frases no arq.
+    arquivo << "Atividade 5.1" << endl;
+    arquivo << "Texto de arquivo std::ofstream" << endl;
+    arquivo.close();    //Fechar arquivo
+    cout << "Arquivo criado com sucesso!" << endl;    
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
+using namespace std;        //Define a estrutura Funcionário
+struct Funcionario {char nome[100]; float sal; int age;};
+int main() {
+    int n;    //Qual a quantidade de funcionários para registro
+    cout<<"\nQuantos funcionários deseja registrar? ";
+    cin>>n;
+    cin.ignore();    //Alocar dinamicamente o vetor Funcionário
+    Funcionario* func = new Funcionario[n];//Ler dinamic vetorF
+    for (int i = 0; i < n; i++) {       //Ler dados Funcionario
+    cout << "Digite o nome do "<< i+1<< "º funcionário: ";
+    cin.getline(func[i].nome, 100);         //Ler no + espaços    
+    cout<<"Qual o salário do "<< i+1<< "º funcionário: ";
+    cin>>func[i].sal;
+    cout<<"Qual a idade do "<< i+1<< "º funcionário: ";
+    cin>>func[i].age;
+    cin.ignore();                           //Clear buff
+    }                           //Mostrar todos os funcionários
+    cout << "\n === LISTA DE FUNCIONÁRIOS ===\n";
+    for (int i = 0; i < n; i++) {
+    cout<<func[i].nome<<", "<<func[i].age<<" anos,"<<" salário: "
+    <<func[i].sal<<" €"<<endl;
+}                //libera a memória alocada dinamicamente
+delete[] func;
+return 0;
+}*/
+/*Crie um programa em C++ que: Defina uma struct chamada Funcionario com os campos:nome (array de caracteres com até 100 caracteres) salario (float) idade (int) Solicite ao utilizador o número de funcionários a serem cadastrados.
+Alocar dinamicamente um vetor de Funcionario. Peça para o utilizador preencher os dados de cada funcionário. Após o cadastro, o programa deve: Mostrar todos os funcionários cadastrados. Calcular e mostrar a média salarial dos funcionários. Mostrar o funcionário mais velho cadastrado.
+Libertar a memória alocada*/
+
+/*Programa em C++ que: defina uma struct chamada Pessoa com os seguintes campos: nome (uma string de até 100 caracteres) e
 idade (inteiro). • Solicite ao utilizador o número de pessoas a serem cadastradas. • Utilize alocação dinâmica (new) para criar um vetor de Pessoa. • Peça ao utilizador que preencha os dados (nome e idade) de cada pessoa. • No final, exiba os dados de todas as pessoas cadastradas. • Liberte a memória alocada dinamicamente
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#include<iostream>
+using namespace std;
+struct Pessoa {     //Estrutura Pessoa + nome e idade
+    char nome[50];
+    int idade;
+};
+int main () {
+    int n;                              //Registros
+    cout<<"\nQuantas pessoas você deseja registrar? ";
+    cin>>n;
+    cin.ignore();                       //Clear buff 
+    .               //Cria vetor Pessoas dinâmicamente
+Pessoa* pessoa = new Pessoa[n];
+for (int i = 0; i < n; i++) { //Le os dados de cada uma
+    cout << "Digite o nome da "<< i+1<< "º pessoa: ";
+    cin.getline(pessoa[i].nome, 50);//Ler no + espaços    
+    cout<<"Qual a idade da "<< i+1<< "º pessoa: ";
+    cin>>pessoa[i].idade;
+    cin.ignore();                           //Clear buff
+}                           //mostra os dados registrados
+cout << "\n === LISTA DE PESSOAS ===\n";
+for (int i = 0; i < n; i++) {
+    cout<<pessoa[i].nome<<", "<<pessoa[i].idade<<" anos.";
+}                //libera a memória alocada dinamicamente
+delete[] pessoa;
+return 0;
+}*/
  /*
 Programa q solicita ao usuário o número de elementos de um vetor de inteiros. Use alocação dinâmica de memória (new) para criar o vetor. Peça ao utilizador que preencha o vetor com valores inteiros. Calcule e exiba: A soma dos elementos. A média dos elementos. O maior e o menor valor.
 Liberte a memória alocada dinamicamente no final do programa.

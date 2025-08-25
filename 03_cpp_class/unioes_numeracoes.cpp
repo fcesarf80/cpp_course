@@ -1,22 +1,29 @@
-#include<iostream>
-#include<fstream>
+#include <iostream>
+#include <fstream>
 using namespace std;
-int main (){                //Abrir para escrita
-    fstream arquivo("atividade5_3.txt", ios::out);
-    for (int i = 1; i<=5; i++) {
-        string clube;
-        cout << i << "° Clube: ";
-        getline(cin, clube);
-        arquivo << clube << endl;
-    }
-    arquivo.close(); //Fecha após escrever
-    arquivo.open("atividade5_3.txt", ios::in);//abrir p leitura
-    cout << "\n=== Clubes Arquivados ===" << endl;
+struct P {  string nome;
+            float altura, peso;
+};
+int main () {
+    P pessoa[5];
+    for (int i = 0; i < 5; i++) {
+        cout << "Nome: ";
+        cin.ignore();
+        getline(cin, pessoa[i].nome);
+        cout << "Altura: ";
+        cin >> pessoa[i].altura;
+        cout << "Peso: ";
+        cin >> pessoa[i].peso;   }
+    ofstream out("data.txt");
+    for (int i = 0; i < 5; i++) {
+      out << pessoa[i].nome <<"\t"<<pessoa[i]
+      .altura<<"\t"<<pessoa[i].peso<<"\t";   }
+    out.close();
+    ifstream in("data.txt");
     string linha;
-    while (getline(arquivo, linha)) {
-        cout << linha << endl;
-    }
-    arquivo.close();// Fecha pós leitura
+    while (getline(in, linha)) {
+        cout << linha << endl; }
+    in.close();
     return 0;
 }
 
@@ -36,6 +43,81 @@ int main (){                //Abrir para escrita
 
 
 
+
+
+
+
+
+
+/*#include <iostream>
+#include <fstream>
+using namespace std;
+int main () {
+    string name;
+    float height, weight;
+    cout << "\nQual o seu nome? ";
+    getline(cin, name);
+    cout << "Qual a sua altura? ";
+    cin >> height;
+    cout << "Qual o seu peso? ";
+    cin >> weight;
+    ofstream out("data.txt");
+    out << name << " " << height << " " << weight;
+    out.close();
+    ifstream in("data.txt");
+    in >> name >> height >> weight;
+    cout<<"\nInformações gravadas: "<<"\nNome: "<<
+    name<<"\tAltura: "<<height<<"\tPeso: "<<weight;
+    in.close();
+    return 0;
+}*/
+/*#include <iostream>
+#include <fstream>
+using namespace std;
+int main() {            // Escreve no arquivo
+    ofstream escrever;
+    escrever.open("pet.txt");//Abrir arq escrita
+    if (!escrever) {
+      cout<<"Erro ao abrir o arquivo para escrita!"<<endl;
+      return 1;    }      // Pede ao usuário o nome do pet
+    string pet;
+    cout << "\nQual e o nome do seu pet? ";
+    getline(cin, pet);      // Escreve o nome no arquivo
+    escrever << pet << endl;
+    escrever.close();          // Leitura do arquivo
+    ifstream leitura;
+    leitura.open("pet.txt"); // Abrir arquivo para leitura
+    if (!leitura) {
+      cout << "Erro ao abrir o arquivo para leitura!"<<endl;
+      return 1;    }      // Exibir o nome do pet
+    string linha;
+    cout << "\nO nome do seu pet é:\n";
+    while (getline(leitura, linha)) {
+        cout << linha << endl;    }
+    leitura.close();
+    return 0;
+}*/
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+int main (){                //Abrir para escrita
+    fstream arquivo("atividade5_3.txt", ios::out);
+    for (int i = 1; i<=5; i++) {
+        string clube;
+        cout << i << "° Clube: ";
+        getline(cin, clube);
+        arquivo << clube << endl;
+    }
+    arquivo.close(); //Fecha após escrever
+    arquivo.open("atividade5_3.txt", ios::in);//abrir p leitura
+    cout << "\n=== Clubes Arquivados ===" << endl;
+    string linha;
+    while (getline(arquivo, linha)) {
+        cout << linha << endl;
+    }
+    arquivo.close();// Fecha pós leitura
+    return 0;
+}*/
 /*#include<iostream>
 #include<fstream> // biblioteca parea arquivos
 using namespace std;

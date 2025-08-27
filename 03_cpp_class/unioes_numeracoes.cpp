@@ -1,4 +1,71 @@
 #include<iostream>
+#include<iomanip>
+using namespace std;
+struct Produto {
+    string nome;
+    float preco;
+    int quantidade;
+};
+int main () {
+    int Nprod;
+    cout<<"Quantos produtos você deseja cadastrar? ";
+    cin>>Nprod;
+
+    Produto *produtos=new Produto[Nprod];
+    //ler produtos
+    for (int i=0; i<Nprod; i++) {
+        cout<<"\nNome?";
+        getline(cin, produtos[i].nome);
+        cout<<"\nPreço?";
+        cin>>produtos[i].preco;
+        cout<<"Quantidade em stock?";
+        cin>>produtos[i].quantidade;
+        cin.ignore();
+    }
+
+    //Imprimir os produtos e calc total
+    float totalStock=0;
+    cout<<"Produtos em stock ----------------\n";
+    for (int i=0; i<Nprod; i++) {
+        float subtotal=produtos[i].preco*produtos[i].quantidade;
+        totalStock+=subtotal;
+        cout<<fixed<<setprecision(2);
+        cout<<"produto"<<i+1<<":\n";
+        cout<<"Nome: "<<produtos[i].nome<<" | "<<"Preço: "<<produtos[i].preco<< " | "<<"Quantidade: "<<produtos[i].quantidade<<" | "<< "Subtotal: €"<<subtotal<<endl;
+        cout<<" Valor Total em Stock €"
+    }
+    delete [] produtos;
+    return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*#include<iostream>
+using namespace std;
+int main (){
+    int n;
+    cout<<"N elementos? ";
+    cin>>n;
+    
+    int * vetor = new int[n];
+    for (int i=0;i<n; i++){
+        cin>>vetor[i];
+    }
+    for (int i=0; i<n; i++){
+        cout<<vetor[i]<<" ";
+    }
+    delete[] vetor;
+    return 0;
+}*/
+/*#include<iostream>
 #include<array>
 #include<algorithm>
 #include<numeric>
@@ -19,28 +86,7 @@ for (int i = 0; i < 5; i++) {
     cout <<"\n\u2022 Notas em ordem crescente: ";
     for (float n : notasOrdenadas) cout << n<< " ";
     return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+}*/
 /*#include <iostream>
 #include <vector>
 #include <algorithm>

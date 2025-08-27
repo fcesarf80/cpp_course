@@ -1,4 +1,23 @@
 #include<iostream>
+#include<fstream>
+using namespace std;
+
+int main() {
+    //classe ofstream o->out/saída
+    //criar variável
+    ofstream arquivo;
+    arquivo.open("arquivo.txt");
+    //escrever no arquivo
+    arquivo<<"\nEscrever no arquivo\n";
+
+
+    return 0;
+}
+
+
+
+
+/*#include<iostream>
 #include<iomanip>
 using namespace std;
 struct Produto {
@@ -10,7 +29,6 @@ int main () {
     int Nprod;
     cout<<"Quantos produtos você deseja cadastrar? ";
     cin>>Nprod;
-
     Produto *produtos=new Produto[Nprod];
     //ler produtos
     for (int i=0; i<Nprod; i++) {
@@ -22,7 +40,6 @@ int main () {
         cin>>produtos[i].quantidade;
         cin.ignore();
     }
-
     //Imprimir os produtos e calc total
     float totalStock=0;
     cout<<"Produtos em stock ----------------\n";
@@ -32,22 +49,11 @@ int main () {
         cout<<fixed<<setprecision(2);
         cout<<"produto"<<i+1<<":\n";
         cout<<"Nome: "<<produtos[i].nome<<" | "<<"Preço: "<<produtos[i].preco<< " | "<<"Quantidade: "<<produtos[i].quantidade<<" | "<< "Subtotal: €"<<subtotal<<endl;
-        cout<<" Valor Total em Stock €"
+        cout<<" Valor Total em Stock €"<<endl;
     }
     delete [] produtos;
     return 0;
-}
-
-
-
-
-
-
-
-
-
-
-
+}*/
 /*#include<iostream>
 using namespace std;
 int main (){

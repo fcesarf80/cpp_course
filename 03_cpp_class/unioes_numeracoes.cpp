@@ -1,5 +1,54 @@
-
+#include<iostream>
+#include<iostream>
+#include<fstream>
+using namespace std;
 int main() {
+    //classe ofstream o-out/saida
+    //criar variavel
+    ofstream arquivo;
+    //criar arquivo
+    arquivo.open("arquivo.txt");
+    //escrever no arquivo
+    arquivo<<"Tecnising\n";
+    arquivo<<"Avante\n";
+    arquivo.close();
+     //Leitura do arquivo
+     ifstream arquivoE;
+     string linha;
+     arquivo.open("arquivo.txt");
+     if (arquivoE.is_open()){
+        while(getline(arquivoE, linha)){
+            cout<<linha<<endl;
+        }
+        arquivoE.close();
+    }else{ cout<<"Arquivo não encontrado!"<<endl;
+     }
+    return 0;
+}
+/*#include<iostream>
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main() {
+    ifstream arquivoE;
+    string linha;
+    arquivoE.open("arquivo.txt");
+    if (arquivoE.is_open()) {
+        cout<<linha<<endl;
+    }
+    arquivoE.close();
+} else {
+    cout<<"Não foi possivel abrir o arquivo"<<endl;
+ }
+    arquivoE.close();
+    return 0;
+}
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+
+
+/*int main() {
     //classe ofstream o->out/saída
     //criar variável
     ofstream arquivo;

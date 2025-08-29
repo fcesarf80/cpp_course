@@ -1,5 +1,3 @@
-Cesar	  1.71	  80	  
-Katarine	  1.65	  60	  
-Zumba 	  0.5	  14	  
-Pablo	  1.68	  90	  
-Ana	  1.59	  65	  
+Cesar
+45
+1.71

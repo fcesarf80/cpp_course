@@ -1,5 +1,79 @@
 #include<iostream>
-#include<iostream>
+#include<fstream>
+using namespace std;
+int main(){
+    string name;
+    int age;
+    float height;
+    cout<<"person's name? ";
+    getline(cin, name);
+    cout<<"person's age? ";
+    cin>>age;
+    cout<<"height of the person? ";
+    cin>>height;
+fstream file; //write to file
+file.open("data.txt", ios::out);
+if(file.is_open()){ file<<name<<endl; file<<age<<endl; file<<height<<endl; cout<< "data saved to data.txt file successfully!"<<endl; }
+return 0;
+}
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+int main(){  //write to file
+    ofstream write;
+    write.open("MMA.txt");
+    string team;
+for(int i =0; i<5; i++){ cout<<"Whats your favorit team? ";
+    getline(cin, team);     write<<team<<endl;  }
+    write.close();
+  ifstream reading; //file reading
+  reading.open("MMA.txt");
+  string linha;
+  if (reading.is_open()) { 
+    while (getline(reading,linha)){ cout<<linha<<endl; }
+    reading.close();} else {cout<<"Arquivo não encontrado"; } 
+    return 0;
+}*/
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+int main(){  //write to file
+    ofstream write;
+    write.open("soccer.txt");
+    string team;
+    cout<< "\nWhats your favorit club? ";
+    getline(cin, club);
+    write<<club;
+    write.close();
+    //file reading
+    ifstream reading;
+    reading.open("soccer.txt");
+    string linha;
+    if (reading.is_open()){ getline(reading,linha);
+        cout<<linha<<endl;} 
+    else {cout<<"Arquivo não encontrado"; } 
+    return 0;
+}*/
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+int main() {
+    fstream arquivo;
+    //escrever no arquivo
+    arquivo.open("nomes.txt", ios::out);
+    char opition ='s';
+    string nome;
+    while (opition=='s' || opition =='S'){
+        cout<<"Nome?";
+        cin>>nome;
+        arquivo<<nome<<endl;
+        cout<<"Deseja escrever outro nome? [s/n]";
+        cin>>opition;
+    }
+        arquivo.close();
+    return 0;
+ }*/
+/*#include<iostream>
 #include<fstream>
 using namespace std;
 int main() {
@@ -17,14 +91,11 @@ int main() {
      string linha;
      arquivo.open("arquivo.txt");
      if (arquivoE.is_open()){
-        while(getline(arquivoE, linha)){
-            cout<<linha<<endl;
-        }
+        while(getline(arquivoE, linha)){cout<<linha<<endl; }
         arquivoE.close();
-    }else{ cout<<"Arquivo não encontrado!"<<endl;
-     }
+    }else{ cout<<"Arquivo não encontrado!"<<endl;    }
     return 0;
-}
+}*/
 /*#include<iostream>
 #include<iostream>
 #include<fstream>
@@ -33,21 +104,15 @@ int main() {
     ifstream arquivoE;
     string linha;
     arquivoE.open("arquivo.txt");
-    if (arquivoE.is_open()) {
-        cout<<linha<<endl;
-    }
+    if (arquivoE.is_open()) {cout<<linha<<endl;  }
     arquivoE.close();
-} else {
-    cout<<"Não foi possivel abrir o arquivo"<<endl;
- }
+} else { cout<<"Não foi possivel abrir o arquivo"<<endl; }
     arquivoE.close();
     return 0;
 }
 /*#include<iostream>
 #include<fstream>
 using namespace std;
-
-
 /*int main() {
     //classe ofstream o->out/saída
     //criar variável

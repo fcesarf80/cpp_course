@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+=======
+Tecnising
+Avante
+>>>>>>> dbe51353ecf54664c50deceee3d93575cbe3ab1f

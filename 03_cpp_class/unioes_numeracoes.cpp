@@ -1,5 +1,6 @@
 #include<iostream>
 #include<iostream>
+<<<<<<< HEAD
 #include<fstream>
 using namespace std;
 int main() {
@@ -46,6 +47,46 @@ int main() {
 /*#include<iostream>
 #include<fstream>
 using namespace std;
+=======
+#include<fstream>
+using namespace std;
+int main() {
+    //classe ofstream o-out/saida
+    //criar variavel
+    ofstream arquivo;
+    //criar arquivo
+    arquivo.open("arquivo.txt");
+    //escrever no arquivo
+    arquivo<<"Tecnising\n";
+    arquivo<<"Avante\n";
+    arquivo.close();
+     //Leitura do arquivo
+     ifstream arquivoE;
+    return 0;
+}
+
+/*#include<iostream>
+#include<iostream>
+#include<fstream>
+using namespace std;
+int main() {
+    ifstream arquivoE;
+    string linha;
+    arquivoE.open("arquivo.txt");
+    if (arquivoE.is_open()) {
+        cout<<linha<<endl;
+    }
+    arquivoE.close();
+} else {
+    cout<<"Não foi possivel abrir o arquivo"<<endl;
+ }
+    arquivoE.close();
+    return 0;
+}
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+>>>>>>> dbe51353ecf54664c50deceee3d93575cbe3ab1f
 int main() {
     //classe ofstream o->out/saída
     //criar variável

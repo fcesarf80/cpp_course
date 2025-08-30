@@ -1,6 +1,25 @@
 #include<list>
 #include<iostream>
 using namespace std;
+int main(){
+    list<string>names;
+    list<string>:: iterator it;
+    string name, pesq;      //read the names
+    cout<<"enter the names (type end to finish)"<<endl;
+    do{ cout<<"Nome?";
+        cin>>name;
+        names.push_back(name);
+    } while (name!="fim");    //Sort the list
+    names.sort();  //print ordered names
+    for(it=names.begin(); it!=names.end(); it++){
+        cout<<*it<<endl;
+    }
+    return 0;
+}
+
+/*#include<list>
+#include<iostream>
+using namespace std;
 struct Person{
     string name;
     int age; };
@@ -28,7 +47,7 @@ int main(){
     int tam=3;
     LerPerson(person, tam);
     imprimirPerson(person);
-}
+}*/
 /*#include<list>
 #include<iostream>
 using namespace std;

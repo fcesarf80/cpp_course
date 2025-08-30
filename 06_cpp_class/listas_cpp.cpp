@@ -1,4 +1,53 @@
-#include<list>
+#include<iostream>
+#include<ctime>
+using namespace std;
+int numeros_primos(int n) {
+    int contador = 0;
+    for (int i =2; i<= n; i++) {
+        bool primo = true;
+        for(int j = 2; j * j <=i; j++) {
+            if ( i % j == 0 ) {
+                primo = false;
+                break;
+            }
+        }
+        if (primo) {
+            contador++;
+        }
+    }
+    return contador;
+}
+int main(){
+    int primos;
+    //Função clock()
+    clock_t t1, t2, t3;
+    t1=clock();
+    primos=numeros_primos(99999999);
+    t2=clock();
+    t3=difftime(t2,t1);
+    cout<<"Quantidade de números primos: "<<primos<<endl;
+    cout<<"tempo de função: "<<((float)t3)/CLOCKS_PER_SEC<<endl;
+    return 0;
+
+}
+//função para contar números primos
+/*#include<list>
+#include<iostream>
+using namespace std;
+int main(){   string txt="Tecnising-Curso de C++";
+    string::iterator it;
+    it=txt.begin();
+    cout<<*it<<endl;
+    it=txt.end()-1;
+    cout<<*it<<endl;
+    cout<<"Tamanho da string = "<<txt.size()<<"|"<<txt.length()<<endl;
+    cout<<"Tamanho maximo = "<<txt.max_size()<<endl;
+    //txt.clear();
+    if(txt.empty()){ cout<<"String vazia"<<endl;  }
+    else { cout<<txt<<endl;     }
+        return 0;
+}*/
+/*#include<list>
 #include<iostream>
 using namespace std;
 int main(){
@@ -9,14 +58,18 @@ int main(){
     do{ cout<<"Nome?";
         cin>>name;
         names.push_back(name);
-    } while (name!="fim");    //Sort the list
-    names.sort();  //print ordered names
+    } while (name!="fim");  //Sort the list
+    names.sort();           //print ordered names
     for(it=names.begin(); it!=names.end(); it++){
-        cout<<*it<<endl;
-    }
+        cout<<*it<<endl; } //search name in list
+    cout<<"Pesquisar nome na lista? ";
+    cin>>pesq;
+    it=find(names.begin(), names.end(), pesq );
+    if(it!=names.end()){
+        cout<<"O nome "<<pesq<< "esta na lista!"<<endl;
+    } else { cout<<"O nome "<<pesq<<" Não esta na lista "<<endl;}
     return 0;
-}
-
+} */
 /*#include<list>
 #include<iostream>
 using namespace std;
@@ -39,8 +92,7 @@ void imprimirPerson(list<Person> &person){
     list<Person>::iterator it;
     for(it=person.begin(); it!=person.end(); it++){
         cout<<"Nome: "<<it->name<<", idade: "<<it->age<<endl;
-    }
- 
+    } 
 }
 int main(){
     list<Person> person;

@@ -1,8 +1,25 @@
-#include<iostream>
+#include<iostreram>
 #include<fstream>
 using namespace std;
+struct Person {string name; int age; float height;};
 int main(){
-    string name;
+    Person person[2]; //Reading people
+    for(int i=0; i<2; i++){
+        cout<<"Person "<<i+1<<": "<<endl;
+        cout<<"Name ";
+        getline(cin, person[i].name);
+        cout<<"Age: ";
+        cin>>person[i].age;
+        cout<<"height ";
+        cin>>person[i].height;
+    }
+
+return 0;
+}
+/*#include<iostream>
+#include<fstream>
+using namespace std;
+int main(){ string name;
     int age;
     float height;
     cout<<"person's name? ";
@@ -14,7 +31,16 @@ int main(){
 fstream file; //write to file
 file.open("data.txt", ios::out);
 if(file.is_open()){ file<<name<<endl; file<<age<<endl; file<<height<<endl; cout<< "data saved to data.txt file successfully!"<<endl; }
-return 0;
+file.open("data,txt", ios::in);//Part 2file reading
+string nameRead;
+int ageRead;
+float heightRead;
+if(file.is_open()){getline(file, nameRead); file>>ageRead>>heightRead; file.close(); } else {
+    cout<<"file not found!"<<endl; }
+    cout<<"Person data read from file\n\n";
+    cout<<"Name: "<<nameRead<<endl;
+    cout<<"Age: "<<ageRead<<endl; cout<<"Height: "<<heightRead<<endl;  
+return 0;*/
 }
 /*#include<iostream>
 #include<fstream>

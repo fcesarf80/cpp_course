@@ -5,16 +5,9 @@ int numeros_primos(int n) {
     int contador = 0;
     for (int i =2; i<= n; i++) {
         bool primo = true;
-        for(int j = 2; j * j <=i; j++) {
-            if ( i % j == 0 ) {
-                primo = false;
-                break;
-            }
-        }
-        if (primo) {
-            contador++;
-        }
-    }
+     for(int j = 2; j * j <=i; j++) {
+      if ( i % j == 0 ) {  primo = false; break; }  }
+        if (primo) { contador++;  }  }
     return contador;
 }
 int main(){
